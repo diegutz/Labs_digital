@@ -13,16 +13,16 @@
 %PSECTS
 $dist/default/production\Lab1.X.production.o
 cinit CODE 0 7F4 7F4 C 2
-text1 CODE 0 65D 65D 21 2
-text2 CODE 0 67E 67E 3D 2
-text3 CODE 0 796 796 5E 2
-text4 CODE 0 6FC 6FC 41 2
-text5 CODE 0 6BB 6BB 41 2
-maintext CODE 0 73D 73D 59 2
+text1 CODE 0 65C 65C 21 2
+text2 CODE 0 67D 67D 3D 2
+text3 CODE 0 795 795 5F 2
+text4 CODE 0 6FB 6FB 41 2
+text5 CODE 0 6BA 6BA 41 2
+maintext CODE 0 73C 73C 59 2
 cstackCOMMON COMMON 1 78 78 3 1
 bssCOMMON COMMON 1 70 70 8 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\diegu\AppData\Local\Temp\sg10.o
+$C:\Users\diegu\AppData\Local\Temp\sg40.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -39,13 +39,13 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-65C 2
+CONST 3-65B 2
 CONST 800-1FFF 2
-ENTRY 3-65C 2
+ENTRY 3-65B 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 3-65C 2
+CODE 3-65B 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -53,9 +53,9 @@ SFR2 100-10F 1
 SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-65C 2
+STRCODE 3-65B 2
 STRCODE 800-1FFF 2
-STRING 3-65C 2
+STRING 3-65B 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -71,136 +71,136 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab1.X.production.o
-7F4 cinit CODE >460:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7F4 cinit CODE >463:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7F4 cinit CODE >483:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7F5 cinit CODE >484:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7F6 cinit CODE >485:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7F7 cinit CODE >486:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7F8 cinit CODE >487:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7F9 cinit CODE >488:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7FA cinit CODE >489:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7FB cinit CODE >490:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7FC cinit CODE >496:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7FC cinit CODE >498:C:\Users\diegu\AppData\Local\Temp\sg10.s
-7FD cinit CODE >499:C:\Users\diegu\AppData\Local\Temp\sg10.s
-6BB text5 CODE >126:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6BB text5 CODE >127:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6BC text5 CODE >128:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6BC text5 CODE >129:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6BF text5 CODE >130:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6C0 text5 CODE >131:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6C0 text5 CODE >132:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6C3 text5 CODE >133:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6C4 text5 CODE >134:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6C4 text5 CODE >135:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6C7 text5 CODE >136:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6C8 text5 CODE >137:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6C8 text5 CODE >138:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6CB text5 CODE >139:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6CC text5 CODE >140:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6CC text5 CODE >141:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6CF text5 CODE >142:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6D0 text5 CODE >143:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6D0 text5 CODE >144:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6D3 text5 CODE >145:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6D4 text5 CODE >146:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6D4 text5 CODE >147:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6D7 text5 CODE >148:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6D8 text5 CODE >149:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6D8 text5 CODE >150:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6DB text5 CODE >151:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6DC text5 CODE >152:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6FB text5 CODE >154:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6FC text4 CODE >156:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6FC text4 CODE >157:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6FD text4 CODE >158:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6FD text4 CODE >159:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-700 text4 CODE >160:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-701 text4 CODE >161:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-701 text4 CODE >162:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-704 text4 CODE >163:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-705 text4 CODE >164:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-705 text4 CODE >165:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-708 text4 CODE >166:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-709 text4 CODE >167:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-709 text4 CODE >168:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-70C text4 CODE >169:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-70D text4 CODE >170:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-70D text4 CODE >171:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-710 text4 CODE >172:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-711 text4 CODE >173:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-711 text4 CODE >174:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-714 text4 CODE >175:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-715 text4 CODE >176:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-715 text4 CODE >177:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-718 text4 CODE >178:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-719 text4 CODE >179:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-719 text4 CODE >180:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-71C text4 CODE >181:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-71D text4 CODE >184:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-73C text4 CODE >185:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-796 text3 CODE >187:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-796 text3 CODE >188:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7A3 text3 CODE >189:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7A6 text3 CODE >190:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7A7 text3 CODE >191:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7B4 text3 CODE >192:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7B8 text3 CODE >193:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7C5 text3 CODE >195:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7D2 text3 CODE >196:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7D5 text3 CODE >197:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7D6 text3 CODE >198:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7E3 text3 CODE >199:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7E6 text3 CODE >200:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-7F3 text3 CODE >202:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-67E text2 CODE >108:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-67E text2 CODE >109:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-680 text2 CODE >110:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-682 text2 CODE >111:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-685 text2 CODE >112:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-686 text2 CODE >113:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-687 text2 CODE >115:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-688 text2 CODE >116:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-695 text2 CODE >117:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-698 text2 CODE >118:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-699 text2 CODE >119:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6A6 text2 CODE >120:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6A9 text2 CODE >121:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6AA text2 CODE >122:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6B7 text2 CODE >123:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-6BA text2 CODE >124:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-65D text1 CODE >89:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-65D text1 CODE >90:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-660 text1 CODE >91:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-663 text1 CODE >92:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-666 text1 CODE >93:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-669 text1 CODE >94:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-66C text1 CODE >95:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-66F text1 CODE >96:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-672 text1 CODE >97:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-675 text1 CODE >98:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-678 text1 CODE >99:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-679 text1 CODE >100:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-67C text1 CODE >101:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-67D text1 CODE >102:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-73D maintext CODE >50:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-73D maintext CODE >52:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-742 maintext CODE >59:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-748 maintext CODE >60:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-74D maintext CODE >63:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-753 maintext CODE >64:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-757 maintext CODE >66:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-761 maintext CODE >67:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-763 maintext CODE >68:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-769 maintext CODE >70:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-76D maintext CODE >71:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-771 maintext CODE >73:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-77B maintext CODE >74:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-77D maintext CODE >75:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-783 maintext CODE >77:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-788 maintext CODE >78:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
-78D maintext CODE >79:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7F4 cinit CODE >460:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7F4 cinit CODE >463:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7F4 cinit CODE >483:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7F5 cinit CODE >484:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7F6 cinit CODE >485:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7F7 cinit CODE >486:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7F8 cinit CODE >487:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7F9 cinit CODE >488:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7FA cinit CODE >489:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7FB cinit CODE >490:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7FC cinit CODE >496:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7FC cinit CODE >498:C:\Users\diegu\AppData\Local\Temp\sg40.s
+7FD cinit CODE >499:C:\Users\diegu\AppData\Local\Temp\sg40.s
+6BA text5 CODE >131:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6BA text5 CODE >132:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6BB text5 CODE >133:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6BB text5 CODE >134:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6BE text5 CODE >135:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6BF text5 CODE >136:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6BF text5 CODE >137:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6C2 text5 CODE >138:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6C3 text5 CODE >139:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6C3 text5 CODE >140:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6C6 text5 CODE >141:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6C7 text5 CODE >142:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6C7 text5 CODE >143:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6CA text5 CODE >144:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6CB text5 CODE >145:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6CB text5 CODE >146:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6CE text5 CODE >147:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6CF text5 CODE >148:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6CF text5 CODE >149:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6D2 text5 CODE >150:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6D3 text5 CODE >151:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6D3 text5 CODE >152:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6D6 text5 CODE >153:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6D7 text5 CODE >154:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6D7 text5 CODE >155:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6DA text5 CODE >156:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6DB text5 CODE >157:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6FA text5 CODE >159:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6FB text4 CODE >161:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6FB text4 CODE >162:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6FC text4 CODE >163:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6FC text4 CODE >164:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6FF text4 CODE >165:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+700 text4 CODE >166:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+700 text4 CODE >167:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+703 text4 CODE >168:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+704 text4 CODE >169:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+704 text4 CODE >170:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+707 text4 CODE >171:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+708 text4 CODE >172:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+708 text4 CODE >173:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+70B text4 CODE >174:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+70C text4 CODE >175:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+70C text4 CODE >176:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+70F text4 CODE >177:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+710 text4 CODE >178:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+710 text4 CODE >179:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+713 text4 CODE >180:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+714 text4 CODE >181:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+714 text4 CODE >182:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+717 text4 CODE >183:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+718 text4 CODE >184:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+718 text4 CODE >185:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+71B text4 CODE >186:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+71C text4 CODE >189:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+73B text4 CODE >190:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+795 text3 CODE >192:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+795 text3 CODE >193:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7A2 text3 CODE >194:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7A5 text3 CODE >195:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7A6 text3 CODE >196:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7B3 text3 CODE >197:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7B7 text3 CODE >198:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7C4 text3 CODE >200:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7D1 text3 CODE >201:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7D4 text3 CODE >202:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7D5 text3 CODE >203:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7E2 text3 CODE >204:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7E6 text3 CODE >205:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+7F3 text3 CODE >207:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+67D text2 CODE >110:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+67D text2 CODE >111:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+67F text2 CODE >112:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+681 text2 CODE >113:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+684 text2 CODE >114:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+685 text2 CODE >115:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+686 text2 CODE >120:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+687 text2 CODE >121:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+694 text2 CODE >122:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+697 text2 CODE >123:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+698 text2 CODE >124:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6A5 text2 CODE >125:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6A8 text2 CODE >126:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6A9 text2 CODE >127:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6B6 text2 CODE >128:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+6B9 text2 CODE >129:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+65C text1 CODE >91:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+65C text1 CODE >92:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+65F text1 CODE >93:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+662 text1 CODE >94:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+665 text1 CODE >95:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+668 text1 CODE >96:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+66B text1 CODE >97:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+66E text1 CODE >98:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+671 text1 CODE >99:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+674 text1 CODE >100:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+677 text1 CODE >101:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+678 text1 CODE >102:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+67B text1 CODE >103:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+67C text1 CODE >104:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+73C maintext CODE >50:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+73C maintext CODE >52:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+741 maintext CODE >59:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+747 maintext CODE >60:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+74C maintext CODE >63:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+752 maintext CODE >64:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+756 maintext CODE >66:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+760 maintext CODE >67:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+762 maintext CODE >68:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+768 maintext CODE >71:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+76C maintext CODE >72:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+770 maintext CODE >74:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+77A maintext CODE >75:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+77C maintext CODE >76:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+782 maintext CODE >79:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+787 maintext CODE >80:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
+78C maintext CODE >81:C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -221,34 +221,34 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\diegu\AppData\Local\Temp\sg10.o
-_main E7A 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\diegu\AppData\Local\Temp\sg40.o
+_main E78 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab1.X.production.o
-start 0 0 CODE 0 init C:\Users\diegu\AppData\Local\Temp\sg10.o
+start 0 0 CODE 0 init C:\Users\diegu\AppData\Local\Temp\sg40.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-_avanza_1 D76 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
-_avanza_2 DF8 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
+_avanza_1 D74 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
+_avanza_2 DF6 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_avanza_1 DF8 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
-__end_of_avanza_2 E7A 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg10.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg10.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg10.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg10.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg10.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg10.o
+__end_of_avanza_1 DF6 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
+__end_of_avanza_2 E78 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg40.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg40.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg40.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg40.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg40.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\diegu\AppData\Local\Temp\sg40.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\diegu\AppData\Local\Temp\sg10.o
-___stacklo 0 0 ABS 0 - C:\Users\diegu\AppData\Local\Temp\sg10.o
+___stackhi 0 0 ABS 0 - C:\Users\diegu\AppData\Local\Temp\sg40.o
+___stacklo 0 0 ABS 0 - C:\Users\diegu\AppData\Local\Temp\sg40.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Lab1.X.production.o
 start_initialization FE8 0 CODE 0 cinit dist/default/production\Lab1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\diegu\AppData\Local\Temp\sg10.o
+___int_sp 0 0 STACK 2 stack C:\Users\diegu\AppData\Local\Temp\sg40.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -289,15 +289,15 @@ __S0 800 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_fin F2C 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
+_fin F2A 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
 __end_of_fin FE8 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\diegu\AppData\Local\Temp\sg10.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\diegu\AppData\Local\Temp\sg40.o
 __size_of_semaforo 0 0 ABS 0 - dist/default/production\Lab1.X.production.o
-__pmaintext E7A 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
+__pmaintext E78 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-_semaforo CFC 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
+_semaforo CFA 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -306,16 +306,16 @@ __Lspace_4 0 0 ABS 0 - -
 __pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\Lab1.X.production.o
 __Lend_init 0 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__end_of_semaforo D76 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
+__end_of_semaforo D74 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
 end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Lab1.X.production.o
 __Hintentry 0 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 0 0 CODE 0 reset_vec -
-__ptext1 CBA 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
-__ptext2 CFC 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
-__ptext3 F2C 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
-__ptext4 DF8 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
-__ptext5 D76 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
+__ptext1 CB8 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
+__ptext2 CFA 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
+__ptext3 F2A 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
+__ptext4 DF6 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
+__ptext5 D74 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -324,7 +324,7 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 78 0 COMMON 1 cstackCOMMON dist/default/production\Lab1.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
-__end_of_main F2C 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
+__end_of_main F2A 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\Lab1.X.production.o
@@ -334,14 +334,14 @@ _TRISA 85 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\Lab1.X.production.o
-__end_of_setup CFC 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
+__end_of_setup CFA 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 _ban_1 76 0 COMMON 1 bssCOMMON dist/default/production\Lab1.X.production.o
 _ban_2 74 0 COMMON 1 bssCOMMON dist/default/production\Lab1.X.production.o
 _cont1 72 0 COMMON 1 bssCOMMON dist/default/production\Lab1.X.production.o
 _cont2 70 0 COMMON 1 bssCOMMON dist/default/production\Lab1.X.production.o
-_setup CBA 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
+_setup CB8 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
 __size_of_fin 0 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __initialization FE8 0 CODE 0 cinit dist/default/production\Lab1.X.production.o
 __size_of_avanza_1 0 0 ABS 0 - dist/default/production\Lab1.X.production.o
@@ -372,12 +372,12 @@ __size_of_avanza_2 0 0 ABS 0 - dist/default/production\Lab1.X.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7F4 FE8 C 2
-text1 0 65D CBA 21 2
-text2 0 67E CFC 3D 2
-text3 0 796 F2C 5E 2
-text4 0 6FC DF8 41 2
-text5 0 6BB D76 41 2
-maintext 0 73D E7A 59 2
+text1 0 65C CB8 21 2
+text2 0 67D CFA 3D 2
+text3 0 795 F2A 5F 2
+text4 0 6FB DF6 41 2
+text5 0 6BA D74 41 2
+maintext 0 73C E78 59 2
 reset_vec 0 0 0 3 2
 bssCOMMON 1 70 70 B 1
 # %NOTES Section

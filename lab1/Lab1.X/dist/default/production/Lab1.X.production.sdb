@@ -13,15 +13,15 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "50 C:\Users\diegu\OneDrive\Documents\universidad\Labs_digital\lab1\Lab1.X\carrera_lab1.c
 [v _main main `(v  1 e 1 0 ]
-"89
+"91
 [v _setup setup `(v  1 e 1 0 ]
-"108
+"110
 [v _semaforo semaforo `(v  1 e 1 0 ]
-"126
+"131
 [v _avanza_1 avanza_1 `(v  1 e 1 0 ]
-"156
+"161
 [v _avanza_2 avanza_2 `(v  1 e 1 0 ]
-"187
+"192
 [v _fin fin `(v  1 e 1 0 ]
 "166 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -98,30 +98,30 @@
 "50
 [v _main main `(v  1 e 1 0 ]
 {
-"83
+"85
 } 0
-"89
+"91
 [v _setup setup `(v  1 e 1 0 ]
 {
-"102
+"104
 } 0
-"108
+"110
 [v _semaforo semaforo `(v  1 e 1 0 ]
 {
-"124
+"129
 } 0
-"187
+"192
 [v _fin fin `(v  1 e 1 0 ]
 {
-"202
+"207
 } 0
-"156
+"161
 [v _avanza_2 avanza_2 `(v  1 e 1 0 ]
 {
-"185
+"190
 } 0
-"126
+"131
 [v _avanza_1 avanza_1 `(v  1 e 1 0 ]
 {
-"154
+"159
 } 0

@@ -2557,6 +2557,7 @@ void main(void) {
             ban_1 = 0;
             cont1++;
         }
+
         if (PORTBbits.RB2 == 0) {
             ban_2 = 1;
         }
@@ -2564,6 +2565,7 @@ void main(void) {
             ban_2 = 0;
             cont2++;
         }
+
         avanza_1();
         avanza_2();
         fin();
@@ -2601,6 +2603,9 @@ void semaforo(void) {
     PORTC = 0;
     PORTD = 0;
     PORTA = 0;
+
+
+
 
     PORTEbits.RE0 = 1;
     _delay((unsigned long)((500)*(8000000/4000.0)));
@@ -2686,7 +2691,7 @@ void fin(void) {
         PORTD = 0;
         PORTC = 0;
     _delay((unsigned long)((500)*(8000000/4000.0)));
-        PORTD = 256;
+        PORTD = 255;
     _delay((unsigned long)((500)*(8000000/4000.0)));
     }
 }

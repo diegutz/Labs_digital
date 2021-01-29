@@ -28,20 +28,20 @@
 //******************************************************************************
 //VARIABLES
 //******************************************************************************
-int ban_1;
+int ban_1;          //banderas para el anti rebote de cada una de los botones
 int ban_2;
-int cont1;
+int cont1;          //contador de pulsos de cada boton
 int cont2;
 
 //******************************************************************************
 //PROTOTIPOS DE FUNCIONES
 //******************************************************************************
-void setup(void);
-void semaforo(void);
-void avanza_1(void);
-void avanza_2(void);
-void fin(void);
-
+void setup(void);       //Funcion para definir la configuracion inicial
+void semaforo(void);    //funcion para las luces del semaforo para dar comienzo
+void avanza_1(void);    //la funcion avanza chequea el valor del contador
+void avanza_2(void);    //y coloca la configuracion de leds pertinente
+void fin(void);         //verifica si algun jugador llego a la meta para finali-
+                        //zar la carrera
 
 //******************************************************************************
 //CICLO PRINCIPAL
@@ -56,27 +56,29 @@ void main(void) {
     //**************************************************************************
 
     while (1) {
-        if (PORTBbits.RB0 == 0) {
-            semaforo(); 
+        if (PORTBbits.RB0 == 0) {   //chequea el boton de semaforo
+            semaforo();             //si se activa, corre la funcion semaforo
         }
 
-        if (PORTBbits.RB1 == 0) {
-            ban_1 = 1;
+        if (PORTBbits.RB1 == 0) {   //si el boton esta desactivado coloca la 
+            ban_1 = 1;              //bandera para permitir el aumento
         }
-        if (PORTBbits.RB1 == 1 && ban_1 == 1) {
-            ban_1 = 0;
-            cont1++;
+        if (PORTBbits.RB1 == 1 && ban_1 == 1) { //chequea el boton y la bandera
+            ban_1 = 0;      //tanto la bandera como el boton deben estar en la
+            cont1++;        //configuracion correcta para funcionar y 
+        }                   //aumentar el contador 1
+        
+        if (PORTBbits.RB2 == 0) {   //si el boton esta desactivado coloca la
+            ban_2 = 1;              //bandera para permitir el aumento
         }
-        if (PORTBbits.RB2 == 0) {
-            ban_2 = 1;
-        }
-        if (PORTBbits.RB2 == 1 && ban_2 == 1) {
-            ban_2 = 0;
-            cont2++;
-        }
-        avanza_1();
-        avanza_2();
-        fin();
+        if (PORTBbits.RB2 == 1 && ban_2 == 1) {//chequea el boton y la bandera
+            ban_2 = 0;       //tanto la bandera como el boton deben estar en la
+            cont2++;         //configuracion correcta para funcionar y 
+        }                    //aumentar el contador 2
+        
+        avanza_1();         //verifica cual es el valor del contador 1
+        avanza_2();         //verifica cual es el valor del contador 2
+        fin();              //chequea si un jugador ya gano
 
 
     }
@@ -106,11 +108,14 @@ void setup(void) {
 //******************************************************************************
 
 void semaforo(void) {
-    cont1 = 0;
+    cont1 = 0;          //reinicia los contadores
     cont2 = 0;
-    PORTC = 0;
+    PORTC = 0;          //apaga todos los leds
     PORTD = 0;
     PORTA = 0;
+    
+    //comienza la secuencia de inicio de semaforo
+    
     //PORTEbits.RE2 = 0; //apago RE2
     PORTEbits.RE0 = 1; // Enciendo puerto RE0
     __delay_ms(500);
@@ -124,9 +129,9 @@ void semaforo(void) {
 }
 
 void avanza_1(void) {
-    switch(cont1){
-        case 1:
-            PORTCbits.RC0 = 1;
+    switch(cont1){              //verifica el caso de contador con un swith case
+        case 1:                 //depende el numero del contador enciende los 
+            PORTCbits.RC0 = 1;  //led debidos
             break;
         case 2:
             PORTCbits.RC1 = 1;
@@ -154,9 +159,9 @@ void avanza_1(void) {
 }
 
 void avanza_2(void) {
-    switch(cont2){
-        case 1:
-            PORTDbits.RD0 = 1;
+    switch(cont2){              //verifica el caso de contador con un swith case
+        case 1:                 //depende el numero del contador enciende los 
+            PORTDbits.RD0 = 1;  //led debidos
             break;
         case 2:
             PORTDbits.RD1 = 1;
@@ -185,18 +190,18 @@ void avanza_2(void) {
 }
 
 void fin(void) {
-    if (cont1 >= 9) {
-        PORTC = 0;
+    if (cont1 >= 9) {   //si el contador 1 finaliza empieza la secuencia de fin
+        PORTC = 0;      //apaga los leds
         PORTD = 0; 
-    __delay_ms(500);  
+    __delay_ms(500);    //enciende y apaga el ganador periodicamente
         PORTC = 255;
     __delay_ms(500);
     }
-    if (cont2 >= 9) {
-        PORTD = 0;
+    if (cont2 >= 9) {   //si el contador 2 finaliza empieza la secuencia de fin
+        PORTD = 0;      //apaga los leds
         PORTC = 0;
-    __delay_ms(500);
-        PORTD = 256;
+    __delay_ms(500);    //enciende y apaga el ganador periodicamente
+        PORTD = 255;
     __delay_ms(500);
     }
 }
