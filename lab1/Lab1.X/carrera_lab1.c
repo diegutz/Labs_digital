@@ -124,87 +124,85 @@ void semaforo(void) {
 }
 
 void avanza_1(void) {
-    if (cont1 == 1) {
-        PORTCbits.RC0 = 1;
+    switch(cont1){
+        case 1:
+            PORTCbits.RC0 = 1;
+            break;
+        case 2:
+            PORTCbits.RC1 = 1;
+            break;
+        case 3:
+            PORTCbits.RC2 = 1;
+            break;
+        case 4:
+            PORTCbits.RC3 = 1;
+            break;
+        case 5:
+            PORTCbits.RC4 = 1;
+            break; 
+        case 6:
+            PORTCbits.RC5 = 1;
+            break;
+        case 7:
+            PORTCbits.RC6 = 1;
+            break;
+        case 8:
+            PORTCbits.RC7 = 1;
+            break;
     }
-    if (cont1 == 2) {
-        PORTC = 0;
-        PORTCbits.RC1 = 1;
-    }
-    if (cont1 == 3) {
-        PORTC = 0;
-        PORTCbits.RC2 = 1;
-    }
-    if (cont1 == 4) {
-        PORTC = 0;
-        PORTCbits.RC3 = 1;
-    }
-    if (cont1 == 5) {
-        PORTC = 0;
-        PORTCbits.RC4 = 1;
-    }
-    if (cont1 == 6) {
-        PORTC = 0;
-        PORTCbits.RC5 = 1;
-    }
-    if (cont1 == 7) {
-        PORTC = 0;
-        PORTCbits.RC6 = 1;
-    }
-    if (cont1 == 8) {
-        PORTC = 0;
-        PORTCbits.RC7 = 1;
-    }
+    
 }
 
 void avanza_2(void) {
-    if (cont2 == 1) {
-        PORTDbits.RD0 = 1;
-    }
-    if (cont2 == 2) {
-        PORTD = 0;
-        PORTDbits.RD1 = 1;
-    }
-    if (cont2 == 3) {
-        PORTD = 0;
-        PORTDbits.RD2 = 1;
-    }
-    if (cont2 == 4) {
-        PORTD = 0;
-        PORTDbits.RD3 = 1;
-    }
-    if (cont2 == 5) {
-        PORTD = 0;
-        PORTDbits.RD4 = 1;
-    }
-    if (cont2 == 6) {
-        PORTD = 0;
-        PORTDbits.RD5 = 1;
-    }
-    if (cont2 == 7) {
-        PORTD = 0;
-        PORTDbits.RD6 = 1;
-    }
-    if (cont2 == 8) {
-        PORTD = 0;
-        PORTDbits.RD7 = 1;
+    switch(cont2){
+        case 1:
+            PORTDbits.RD0 = 1;
+            break;
+        case 2:
+            PORTDbits.RD1 = 1;
+            break;
+        case 3:
+            PORTDbits.RD2 = 1;
+            break;
+        case 4:
+            PORTDbits.RD3 = 1;
+            break;
+        case 5:
+            PORTDbits.RD4 = 1;
+            break; 
+        case 6:
+            PORTDbits.RD5 = 1;
+            break;
+        case 7:
+            PORTDbits.RD6 = 1;
+            break;
+        case 8:
+            PORTDbits.RD7 = 1;
+            break;       
+              
+        
     }
 }
 
 void fin(void) {
     if (cont1 == 9) {
         PORTC = 0;
-        PORTAbits.RA0 = 1;        
+        PORTD = 0; 
+    __delay_ms(500);  
+        PORTC = 1;
+    __delay_ms(500);
+        PORTC = 0;
+    __delay_ms(500); 
+        PORTC = 1;
     }
     if (cont2 == 9) {
         PORTD = 0;
-        PORTAbits.RA1 = 1;
-    }
-    if ((cont1 == 10) || (cont2 == 10)) {
-        cont1 = 0; //reinicio los contadores
-        cont2 = 0;
-        PORTA =0;
-        PORTC =0;
-        PORTD =0;
+        PORTC = 0;
+    __delay_ms(500);
+        PORTD = 1;
+    __delay_ms(500);
+        PORTD = 0;
+    __delay_ms(500);
+        PORTD = 1;
     }
 }

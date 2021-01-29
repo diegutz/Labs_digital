@@ -19,24 +19,12 @@
 [v _semaforo semaforo `(v  1 e 1 0 ]
 "126
 [v _avanza_1 avanza_1 `(v  1 e 1 0 ]
-"160
+"156
 [v _avanza_2 avanza_2 `(v  1 e 1 0 ]
-"194
+"187
 [v _fin fin `(v  1 e 1 0 ]
 "166 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S134 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
-]
-"183
-[u S143 . 1 `S134 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES143  1 e 1 @5 ]
 [s S26 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
@@ -122,18 +110,18 @@
 {
 "124
 } 0
-"194
+"187
 [v _fin fin `(v  1 e 1 0 ]
 {
-"210
+"208
 } 0
-"160
+"156
 [v _avanza_2 avanza_2 `(v  1 e 1 0 ]
 {
-"192
+"185
 } 0
 "126
 [v _avanza_1 avanza_1 `(v  1 e 1 0 ]
 {
-"158
+"154
 } 0
