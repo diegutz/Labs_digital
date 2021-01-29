@@ -2675,24 +2675,18 @@ void avanza_2(void) {
 }
 
 void fin(void) {
-    if (cont1 == 9) {
+    if (cont1 >= 9) {
         PORTC = 0;
         PORTD = 0;
     _delay((unsigned long)((500)*(8000000/4000.0)));
-        PORTC = 1;
+        PORTC = 255;
     _delay((unsigned long)((500)*(8000000/4000.0)));
-        PORTC = 0;
-    _delay((unsigned long)((500)*(8000000/4000.0)));
-        PORTC = 1;
     }
-    if (cont2 == 9) {
+    if (cont2 >= 9) {
         PORTD = 0;
         PORTC = 0;
     _delay((unsigned long)((500)*(8000000/4000.0)));
-        PORTD = 1;
+        PORTD = 256;
     _delay((unsigned long)((500)*(8000000/4000.0)));
-        PORTD = 0;
-    _delay((unsigned long)((500)*(8000000/4000.0)));
-        PORTD = 1;
     }
 }

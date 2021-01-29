@@ -185,24 +185,18 @@ void avanza_2(void) {
 }
 
 void fin(void) {
-    if (cont1 == 9) {
+    if (cont1 >= 9) {
         PORTC = 0;
         PORTD = 0; 
     __delay_ms(500);  
-        PORTC = 1;
+        PORTC = 255;
     __delay_ms(500);
-        PORTC = 0;
-    __delay_ms(500); 
-        PORTC = 1;
     }
-    if (cont2 == 9) {
+    if (cont2 >= 9) {
         PORTD = 0;
         PORTC = 0;
     __delay_ms(500);
-        PORTD = 1;
+        PORTD = 256;
     __delay_ms(500);
-        PORTD = 0;
-    __delay_ms(500);
-        PORTD = 1;
     }
 }
