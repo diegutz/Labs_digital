@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Thu Feb 04 21:25:53 2021
+                                                                                               Thu Feb 04 22:49:19 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -261,27 +261,27 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    247                           
    248                           	psect	bssCOMMON
    249  0070                     __pbssCOMMON:
-   250  0070                     _adc_data:
+   250  0070                     _adc_datos:
    251  0070                     	ds	1
-   252  0071                     _mux_timer:
+   252  0071                     _timer_mux:
    253  0071                     	ds	1
-   254  0072                     _push_timer:
+   254  0072                     _Timer:
    255  0072                     	ds	1
-   256  0073                     _portb_flags:
+   256  0073                     _ban_B:
    257  0073                     	ds	1
-   258  0074                     _push_counter:
+   258  0074                     _cont1:
    259  0074                     	ds	1
    260                           
    261                           	psect	cstackCOMMON
    262  0075                     __pcstackCOMMON:
    263  0075                     ?_setup:
-   264  0075                     ?_push_logic:	
+   264  0075                     ?_config_boton:	
    265                           ; 1 bytes @ 0x0
    266                           
-   267  0075                     ?_adc_logic:	
+   267  0075                     ?_config_adc:	
    268                           ; 1 bytes @ 0x0
    269                           
-   270  0075                     ?_mux_logic:	
+   270  0075                     ?_config_mux:	
    271                           ; 1 bytes @ 0x0
    272                           
    273  0075                     ?_main:	
@@ -297,13 +297,13 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    283                           ; 1 bytes @ 0x0
    284  0075                     	ds	3
    285  0078                     ??_setup:
-   286  0078                     ??_push_logic:	
+   286  0078                     ??_config_boton:	
    287                           ; 1 bytes @ 0x3
    288                           
-   289  0078                     ??_adc_logic:	
+   289  0078                     ??_config_adc:	
    290                           ; 1 bytes @ 0x3
    291                           
-   292  0078                     ??_mux_logic:	
+   292  0078                     ??_config_mux:	
    293                           ; 1 bytes @ 0x3
    294                           
    295                           
@@ -340,9 +340,9 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    326 ;;Total ram usage:        0 bytes
    327 ;; Hardware stack levels required when called:    2
    328 ;; This function calls:
-   329 ;;		_adc_logic
-   330 ;;		_mux_logic
-   331 ;;		_push_logic
+   329 ;;		_config_adc
+   330 ;;		_config_boton
+   331 ;;		_config_mux
    332 ;;		_setup
    333 ;; This function is called by:
    334 ;;		Startup code after reset
@@ -363,19 +363,19 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    349                           ;interupciones.c: 64:     while(1)
    350                           
    351                           
-   352                           ;interupciones.c: 65:     {;interupciones.c: 69:         push_logic();
-   353  0073  120A  118A  2094  120A  118A  	fcall	_push_logic
+   352                           ;interupciones.c: 65:     {;interupciones.c: 69:         config_boton();
+   353  0073  120A  118A  2094  120A  118A  	fcall	_config_boton
    354                           
-   355                           ;interupciones.c: 70:         adc_logic();
-   356  0078  120A  118A  20B7  120A  118A  	fcall	_adc_logic
+   355                           ;interupciones.c: 70:         config_adc();
+   356  0078  120A  118A  20B7  120A  118A  	fcall	_config_adc
    357                           
-   358                           ;interupciones.c: 71:         mux_logic();
-   359  007D  120A  118A  20AE  120A  118A  	fcall	_mux_logic
+   358                           ;interupciones.c: 71:         config_mux();
+   359  007D  120A  118A  20AE  120A  118A  	fcall	_config_mux
    360  0082                     l761:
    361                           
-   362                           ;interupciones.c: 73:         PORTEbits.RE2 = adc_data >= push_counter ? 1 : 0;
-   363  0082  0874               	movf	_push_counter,w
-   364  0083  0270               	subwf	_adc_data,w
+   362                           ;interupciones.c: 73:         PORTEbits.RE2 = adc_datos >= cont1 ? 1 : 0;
+   363  0082  0874               	movf	_cont1,w
+   364  0083  0270               	subwf	_adc_datos,w
    365  0084  1803               	skipnc
    366  0085  2887               	goto	u51
    367  0086  288B               	goto	u50
@@ -391,8 +391,8 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    377  008E                     u64:
    378  008E                     l763:
    379                           
-   380                           ;interupciones.c: 75:         PORTD = push_counter;
-   381  008E  0874               	movf	_push_counter,w
+   380                           ;interupciones.c: 75:         PORTD = cont1;
+   381  008E  0874               	movf	_cont1,w
    382  008F  0088               	movwf	8	;volatile
    383  0090  2873               	goto	l65
    384  0091  120A  118A  280C   	ljmp	start
@@ -553,10 +553,10 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    539  006E                     __end_of_setup:
    540                           
    541                           	psect	text2
-   542  0094                     __ptext2:	
-   543 ;; *************** function _push_logic *****************
+   542  00AE                     __ptext2:	
+   543 ;; *************** function _config_mux *****************
    544 ;; Defined at:
-   545 ;;		line 120 in file "interupciones.c"
+   545 ;;		line 101 in file "interupciones.c"
    546 ;; Parameters:    Size  Location     Type
    547 ;;		None
    548 ;; Auto vars:     Size  Location     Type
@@ -572,9 +572,9 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    558 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
    559 ;;      Params:         0       0       0       0       0
    560 ;;      Locals:         0       0       0       0       0
-   561 ;;      Temps:          1       0       0       0       0
-   562 ;;      Totals:         1       0       0       0       0
-   563 ;;Total ram usage:        1 bytes
+   561 ;;      Temps:          0       0       0       0       0
+   562 ;;      Totals:         0       0       0       0       0
+   563 ;;Total ram usage:        0 bytes
    564 ;; Hardware stack levels used:    1
    565 ;; Hardware stack levels required when called:    1
    566 ;; This function calls:
@@ -585,127 +585,127 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    571 ;;
    572                           
    573                           
-   574                           ;psect for function _push_logic
-   575  0094                     _push_logic:
-   576  0094                     l735:	
+   574                           ;psect for function _config_mux
+   575  00AE                     _config_mux:
+   576  00AE                     l753:	
    577                           ;incstack = 0
-   578                           ; Regs used in _push_logic: [wreg+status,2+status,0]
+   578                           ; Regs used in _config_mux: [wreg+status,2+status,0]
    579                           
    580                           
-   581                           ;interupciones.c: 122:     if (200 != push_timer)
-   582  0094  30C8               	movlw	200
-   583  0095  0672               	xorwf	_push_timer,w
-   584  0096  1903               	btfsc	3,2
-   585  0097  2899               	goto	u11
-   586  0098  289A               	goto	u10
-   587  0099                     u11:
-   588  0099  289B               	goto	l739
-   589  009A                     u10:
-   590  009A  28AD               	goto	l88
-   591  009B                     l739:
+   581                           ;interupciones.c: 103:     if (40 != timer_mux)
+   582  00AE  3028               	movlw	40
+   583  00AF  0671               	xorwf	_timer_mux,w
+   584  00B0  1903               	btfsc	3,2
+   585  00B1  28B3               	goto	u41
+   586  00B2  28B4               	goto	u40
+   587  00B3                     u41:
+   588  00B3  28B5               	goto	l757
+   589  00B4                     u40:
+   590  00B4  28B6               	goto	l80
+   591  00B5                     l757:
    592                           
-   593                           ;interupciones.c: 127:     push_timer = 0;
-   594  009B  01F2               	clrf	_push_timer
-   595  009C                     l741:
-   596                           
-   597                           ;interupciones.c: 129:     if (0x01 == portb_flags)
-   598  009C  0373               	decf	_portb_flags,w
-   599  009D  1D03               	btfss	3,2
-   600  009E  28A0               	goto	u21
-   601  009F  28A1               	goto	u20
-   602  00A0                     u21:
-   603  00A0  28A5               	goto	l89
-   604  00A1                     u20:
-   605  00A1                     l743:
-   606                           
-   607                           ;interupciones.c: 130:     {;interupciones.c: 131:         push_counter++;
-   608  00A1  3001               	movlw	1
-   609  00A2  00F8               	movwf	??_push_logic
-   610  00A3  0878               	movf	??_push_logic,w
-   611  00A4  07F4               	addwf	_push_counter,f
-   612  00A5                     l89:	
-   613                           ;interupciones.c: 132:     }
-   614                           
-   615                           
-   616                           ;interupciones.c: 134:     if (0x02 == portb_flags)
-   617  00A5  3002               	movlw	2
-   618  00A6  0673               	xorwf	_portb_flags,w
-   619  00A7  1D03               	btfss	3,2
-   620  00A8  28AA               	goto	u31
-   621  00A9  28AB               	goto	u30
-   622  00AA                     u31:
-   623  00AA  28AD               	goto	l88
-   624  00AB                     u30:
-   625  00AB                     l745:
-   626                           
-   627                           ;interupciones.c: 135:     {;interupciones.c: 136:         push_counter--;
-   628  00AB  3001               	movlw	1
-   629  00AC  02F4               	subwf	_push_counter,f
-   630  00AD                     l88:
-   631  00AD  0008               	return
-   632  00AE                     __end_of_push_logic:
-   633                           
-   634                           	psect	text3
-   635  00AE                     __ptext3:	
-   636 ;; *************** function _mux_logic *****************
-   637 ;; Defined at:
-   638 ;;		line 101 in file "interupciones.c"
-   639 ;; Parameters:    Size  Location     Type
-   640 ;;		None
-   641 ;; Auto vars:     Size  Location     Type
-   642 ;;		None
-   643 ;; Return value:  Size  Location     Type
-   644 ;;                  1    wreg      void 
-   645 ;; Registers used:
-   646 ;;		wreg, status,2, status,0
-   647 ;; Tracked objects:
-   648 ;;		On entry : 0/0
-   649 ;;		On exit  : 0/0
-   650 ;;		Unchanged: 0/0
-   651 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   652 ;;      Params:         0       0       0       0       0
-   653 ;;      Locals:         0       0       0       0       0
-   654 ;;      Temps:          0       0       0       0       0
-   655 ;;      Totals:         0       0       0       0       0
-   656 ;;Total ram usage:        0 bytes
-   657 ;; Hardware stack levels used:    1
-   658 ;; Hardware stack levels required when called:    1
-   659 ;; This function calls:
-   660 ;;		Nothing
-   661 ;; This function is called by:
-   662 ;;		_main
-   663 ;; This function uses a non-reentrant model
-   664 ;;
-   665                           
-   666                           
-   667                           ;psect for function _mux_logic
-   668  00AE                     _mux_logic:
-   669  00AE                     l753:	
-   670                           ;incstack = 0
-   671                           ; Regs used in _mux_logic: [wreg+status,2+status,0]
+   593                           ;interupciones.c: 108:     timer_mux = 0;
+   594  00B5  01F1               	clrf	_timer_mux
+   595  00B6                     l80:
+   596  00B6  0008               	return
+   597  00B7                     __end_of_config_mux:
+   598                           
+   599                           	psect	text3
+   600  0094                     __ptext3:	
+   601 ;; *************** function _config_boton *****************
+   602 ;; Defined at:
+   603 ;;		line 120 in file "interupciones.c"
+   604 ;; Parameters:    Size  Location     Type
+   605 ;;		None
+   606 ;; Auto vars:     Size  Location     Type
+   607 ;;		None
+   608 ;; Return value:  Size  Location     Type
+   609 ;;                  1    wreg      void 
+   610 ;; Registers used:
+   611 ;;		wreg, status,2, status,0
+   612 ;; Tracked objects:
+   613 ;;		On entry : 0/0
+   614 ;;		On exit  : 0/0
+   615 ;;		Unchanged: 0/0
+   616 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   617 ;;      Params:         0       0       0       0       0
+   618 ;;      Locals:         0       0       0       0       0
+   619 ;;      Temps:          1       0       0       0       0
+   620 ;;      Totals:         1       0       0       0       0
+   621 ;;Total ram usage:        1 bytes
+   622 ;; Hardware stack levels used:    1
+   623 ;; Hardware stack levels required when called:    1
+   624 ;; This function calls:
+   625 ;;		Nothing
+   626 ;; This function is called by:
+   627 ;;		_main
+   628 ;; This function uses a non-reentrant model
+   629 ;;
+   630                           
+   631                           
+   632                           ;psect for function _config_boton
+   633  0094                     _config_boton:
+   634  0094                     l735:	
+   635                           ;incstack = 0
+   636                           ; Regs used in _config_boton: [wreg+status,2+status,0]
+   637                           
+   638                           
+   639                           ;interupciones.c: 122:     if (200 != Timer)
+   640  0094  30C8               	movlw	200
+   641  0095  0672               	xorwf	_Timer,w
+   642  0096  1903               	btfsc	3,2
+   643  0097  2899               	goto	u11
+   644  0098  289A               	goto	u10
+   645  0099                     u11:
+   646  0099  289B               	goto	l739
+   647  009A                     u10:
+   648  009A  28AD               	goto	l88
+   649  009B                     l739:
+   650                           
+   651                           ;interupciones.c: 127:     Timer = 0;
+   652  009B  01F2               	clrf	_Timer
+   653  009C                     l741:
+   654                           
+   655                           ;interupciones.c: 129:     if (0x01 == ban_B)
+   656  009C  0373               	decf	_ban_B,w
+   657  009D  1D03               	btfss	3,2
+   658  009E  28A0               	goto	u21
+   659  009F  28A1               	goto	u20
+   660  00A0                     u21:
+   661  00A0  28A5               	goto	l89
+   662  00A1                     u20:
+   663  00A1                     l743:
+   664                           
+   665                           ;interupciones.c: 130:     {;interupciones.c: 131:         cont1++;
+   666  00A1  3001               	movlw	1
+   667  00A2  00F8               	movwf	??_config_boton
+   668  00A3  0878               	movf	??_config_boton,w
+   669  00A4  07F4               	addwf	_cont1,f
+   670  00A5                     l89:	
+   671                           ;interupciones.c: 132:     }
    672                           
    673                           
-   674                           ;interupciones.c: 103:     if (40 != mux_timer)
-   675  00AE  3028               	movlw	40
-   676  00AF  0671               	xorwf	_mux_timer,w
-   677  00B0  1903               	btfsc	3,2
-   678  00B1  28B3               	goto	u41
-   679  00B2  28B4               	goto	u40
-   680  00B3                     u41:
-   681  00B3  28B5               	goto	l757
-   682  00B4                     u40:
-   683  00B4  28B6               	goto	l80
-   684  00B5                     l757:
-   685                           
-   686                           ;interupciones.c: 108:     mux_timer = 0;
-   687  00B5  01F1               	clrf	_mux_timer
-   688  00B6                     l80:
-   689  00B6  0008               	return
-   690  00B7                     __end_of_mux_logic:
+   674                           ;interupciones.c: 134:     if (0x02 == ban_B)
+   675  00A5  3002               	movlw	2
+   676  00A6  0673               	xorwf	_ban_B,w
+   677  00A7  1D03               	btfss	3,2
+   678  00A8  28AA               	goto	u31
+   679  00A9  28AB               	goto	u30
+   680  00AA                     u31:
+   681  00AA  28AD               	goto	l88
+   682  00AB                     u30:
+   683  00AB                     l745:
+   684                           
+   685                           ;interupciones.c: 135:     {;interupciones.c: 136:         cont1--;
+   686  00AB  3001               	movlw	1
+   687  00AC  02F4               	subwf	_cont1,f
+   688  00AD                     l88:
+   689  00AD  0008               	return
+   690  00AE                     __end_of_config_boton:
    691                           
    692                           	psect	text4
    693  00B7                     __ptext4:	
-   694 ;; *************** function _adc_logic *****************
+   694 ;; *************** function _config_adc *****************
    695 ;; Defined at:
    696 ;;		line 112 in file "interupciones.c"
    697 ;; Parameters:    Size  Location     Type
@@ -736,11 +736,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    722 ;;
    723                           
    724                           
-   725                           ;psect for function _adc_logic
-   726  00B7                     _adc_logic:
+   725                           ;psect for function _config_adc
+   726  00B7                     _config_adc:
    727  00B7                     l749:	
    728                           ;incstack = 0
-   729                           ; Regs used in _adc_logic: [wreg]
+   729                           ; Regs used in _config_adc: [wreg]
    730                           
    731                           
    732                           ;interupciones.c: 114:     if (ADCON0bits.GO)
@@ -749,7 +749,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    735  00B9  081F               	movf	31,w	;volatile
    736  00BA                     l84:
    737  00BA  0008               	return
-   738  00BB                     __end_of_adc_logic:
+   738  00BB                     __end_of_config_adc:
    739                           
    740                           	psect	text5
    741  0018                     __ptext5:	
@@ -800,13 +800,13 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    786  001C  100B               	bcf	11,0	;volatile
    787  001D                     i1l769:
    788                           
-   789                           ;interupciones.c: 84:         portb_flags = PORTB;
+   789                           ;interupciones.c: 84:         ban_B = PORTB;
    790  001D  1283               	bcf	3,5	;RP0=0, select bank0
    791  001E  1303               	bcf	3,6	;RP1=0, select bank0
    792  001F  0806               	movf	6,w	;volatile
    793  0020  00F5               	movwf	??_isr
    794  0021  0875               	movf	??_isr,w
-   795  0022  00F3               	movwf	_portb_flags
+   795  0022  00F3               	movwf	_ban_B
    796  0023                     i1l771:
    797                           
    798                           ;interupciones.c: 87:     if (INTCONbits.T0IF)
@@ -829,18 +829,18 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    815  002B  0081               	movwf	1	;volatile
    816  002C                     i1l777:
    817                           
-   818                           ;interupciones.c: 91:         push_timer++;
+   818                           ;interupciones.c: 91:         Timer++;
    819  002C  3001               	movlw	1
    820  002D  00F5               	movwf	??_isr
    821  002E  0875               	movf	??_isr,w
-   822  002F  07F2               	addwf	_push_timer,f
+   822  002F  07F2               	addwf	_Timer,f
    823  0030                     i1l779:
    824                           
-   825                           ;interupciones.c: 92:         mux_timer++;
+   825                           ;interupciones.c: 92:         timer_mux++;
    826  0030  3001               	movlw	1
    827  0031  00F5               	movwf	??_isr
    828  0032  0875               	movf	??_isr,w
-   829  0033  07F1               	addwf	_mux_timer,f
+   829  0033  07F1               	addwf	_timer_mux,f
    830  0034                     i1l781:
    831                           
    832                           ;interupciones.c: 95:     if (PIR1bits.ADIF)
@@ -854,11 +854,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    840  003A                     u9_20:
    841  003A                     i1l783:
    842                           
-   843                           ;interupciones.c: 96:     {;interupciones.c: 97:         adc_data = ADRESH;
+   843                           ;interupciones.c: 96:     {;interupciones.c: 97:         adc_datos = ADRESH;
    844  003A  081E               	movf	30,w	;volatile
    845  003B  00F5               	movwf	??_isr
    846  003C  0875               	movf	??_isr,w
-   847  003D  00F0               	movwf	_adc_data
+   847  003D  00F0               	movwf	_adc_datos
    848  003E                     i1l76:
    849  003E  0877               	movf	??_isr+2,w
    850  003F  008A               	movwf	10
@@ -944,7 +944,7 @@ Pointer List with Targets:
 
 Critical Paths under _main in COMMON
 
-    _main->_push_logic
+    _main->_config_boton
 
 Critical Paths under _isr in COMMON
 
@@ -988,19 +988,19 @@ Call Graph Tables:
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
  (0) _main                                                 0     0      0       0
-                          _adc_logic
-                          _mux_logic
-                         _push_logic
+                         _config_adc
+                       _config_boton
+                         _config_mux
                               _setup
  ---------------------------------------------------------------------------------
  (1) _setup                                                0     0      0       0
  ---------------------------------------------------------------------------------
- (1) _push_logic                                           1     1      0       0
+ (1) _config_mux                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _config_boton                                         1     1      0       0
                                               3 COMMON     1     1      0
  ---------------------------------------------------------------------------------
- (1) _mux_logic                                            0     0      0       0
- ---------------------------------------------------------------------------------
- (1) _adc_logic                                            0     0      0       0
+ (1) _config_adc                                           0     0      0       0
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 1
  ---------------------------------------------------------------------------------
@@ -1015,9 +1015,9 @@ Call Graph Tables:
  Call Graph Graphs:
 
  _main (ROOT)
-   _adc_logic
-   _mux_logic
-   _push_logic
+   _config_adc
+   _config_boton
+   _config_mux
    _setup
 
  _isr (ROOT)
@@ -1051,7 +1051,7 @@ DATA                 0      0       9      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Thu Feb 04 21:25:53 2021
+Symbol Table                                                                                   Thu Feb 04 22:49:19 2021
 
                      l80 00B6                       l65 0073                       l84 00BA  
                      l93 006D                       l88 00AD                       l89 00A5  
@@ -1064,17 +1064,17 @@ Symbol Table                                                                    
                     l723 0065                      l715 0060                      l707 0059  
                     l741 009C                      l725 0066                      l717 0061  
                     l709 005A                      l743 00A1                      l735 0094  
-                    l727 0067                      l719 0063                      l753 00AE  
-                    l745 00AB                      l729 0068                      l761 0082  
+                    l727 0067                      l719 0063                      l745 00AB  
+                    l753 00AE                      l729 0068                      l761 0082  
                     l739 009B                      l691 004E                      l763 008E  
                     l749 00B7                      l757 00B5                      l693 0050  
                     l685 0045                      l695 0051                      l687 0049  
                     l759 006E                      l697 0052                      l689 004A  
-                    l699 0053                      _isr 0018             _push_counter 0074  
-                   ?_isr 0075                     _IOCB 0096                     i1l76 003E  
-                   _TMR0 0001                     u7_20 001C                     u7_21 001B  
-                   u8_20 0027                     u8_21 0026                     u9_20 003A  
-                   u9_21 0039                     _main 006E                     btemp 007E  
+                    l699 0053                      _isr 0018                     ?_isr 0075  
+                   _IOCB 0096                     i1l76 003E                     _TMR0 0001  
+                   u7_20 001C                     u7_21 001B                     u8_20 0027  
+                   u8_21 0026                     u9_20 003A                     u9_21 0039  
+                   _main 006E                     btemp 007E           ??_config_boton 0078  
                    start 000C                    ??_isr 0075                    ?_main 0075  
                   _ANSEL 0188                    i1l771 0023                    i1l773 0027  
                   i1l781 0034                    i1l765 0018                    i1l783 003A  
@@ -1083,22 +1083,22 @@ Symbol Table                                                                    
                   _PORTB 0006                    _PORTC 0007                    _PORTD 0008  
                   _PORTE 0009                    _TRISA 0085                    _TRISB 0086  
                   _TRISC 0087                    _TRISD 0088                    _TRISE 0089  
+                  _Timer 0072                    _ban_B 0073                    _cont1 0074  
                   _setup 0045                    pclath 000A                    status 0003  
                   wtemp0 007E          __initialization 000F             __end_of_main 0094  
                  ??_main 0079                   _ADRESH 001E                   ?_setup 0075  
-                 _ANSELH 0189                   _OSCCON 008F                   saved_w 007E  
-__end_of__initialization 0014       __size_of_adc_logic 0004           __pcstackCOMMON 0075  
+                 _ANSELH 0189                   _OSCCON 008F     __end_of_config_boton 00AE  
+                 saved_w 007E  __end_of__initialization 0014           __pcstackCOMMON 0075  
           __end_of_setup 006E           _OPTION_REGbits 0081                  ??_setup 0078  
-             __pmaintext 006E               __pintentry 0004        __end_of_adc_logic 00BB  
-     __size_of_mux_logic 0009                  __ptext1 0045                  __ptext2 0094  
-                __ptext3 00AE                  __ptext4 00B7                  __ptext5 0018  
-           __size_of_isr 002D     end_of_initialization 0014        __end_of_mux_logic 00B7  
-              _PORTEbits 0009               _push_logic 0094               _push_timer 0072  
-    start_initialization 000F              __end_of_isr 0045              __pbssCOMMON 0070  
-              ___latbits 0002                _adc_logic 00B7              ?_push_logic 0075  
-             ?_adc_logic 0075           __size_of_setup 0029        interrupt_function 0004  
-               _PIR1bits 000C                _mux_logic 00AE                _mux_timer 0071  
-    __size_of_push_logic 001A               _ADCON0bits 001F               ?_mux_logic 0075  
-               _adc_data 0070              ??_adc_logic 0078            __size_of_main 0026  
-             _INTCONbits 000B             ??_push_logic 0078                 intlevel1 0000  
-            ??_mux_logic 0078       __end_of_push_logic 00AE              _portb_flags 0073  
+             __pmaintext 006E               __pintentry 0004               _config_adc 00B7  
+             _config_mux 00AE    __size_of_config_boton 001A                  __ptext1 0045  
+                __ptext2 00AE                  __ptext3 0094                  __ptext4 00B7  
+                __ptext5 0018             __size_of_isr 002D     end_of_initialization 0014  
+           _config_boton 0094                _PORTEbits 0009              ?_config_adc 0075  
+            ?_config_mux 0075      start_initialization 000F              __end_of_isr 0045  
+    __size_of_config_adc 0004      __size_of_config_mux 0009              __pbssCOMMON 0070  
+              ___latbits 0002                _adc_datos 0070           __size_of_setup 0029  
+      interrupt_function 0004                 _PIR1bits 000C                _timer_mux 0071  
+             _ADCON0bits 001F             ??_config_adc 0078             ??_config_mux 0078  
+     __end_of_config_adc 00BB       __end_of_config_mux 00B7            __size_of_main 0026  
+             _INTCONbits 000B                 intlevel1 0000            ?_config_boton 0075  

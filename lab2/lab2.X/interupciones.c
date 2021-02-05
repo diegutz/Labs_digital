@@ -40,19 +40,21 @@
 // Variables
 //******************************************************************************
 
-uint8_t push_counter = 0;
-uint8_t portb_flags  = 0;
-uint8_t push_timer   = 0;
-uint8_t mux_timer    = 0;
-uint8_t adc_data     = 0;
+uint8_t cont1 = 0;
+uint8_t ban_B = 0;
+uint8_t Timer = 0;
+uint8_t timer_mux = 0;
+uint8_t adc_datos = 0;
+int seg1;
+int seg2;
 //******************************************************************************
 // function declarations
 //******************************************************************************
 
 void setup(void);
-void push_logic(void);
-void adc_logic(void);
-void mux_logic(void);
+void config_boton(void);
+void config_adc(void);
+void config_mux(void);
 
 //******************************************************************************
 // Main
@@ -66,13 +68,13 @@ void main(void)
         //**********************************************************************
         // Text goes here
         //**********************************************************************
-        push_logic();
-        adc_logic();
-        mux_logic();
+        config_boton();
+        config_adc();
+        config_mux();
 
-        PORTEbits.RE2 = adc_data >= push_counter ? 1 : 0;
+        PORTEbits.RE2 = adc_datos >= cont1 ? 1 : 0;
 
-        PORTD = push_counter;
+        PORTD = cont1;
     }
 }
 
@@ -81,35 +83,35 @@ void __interrupt() isr(void)
     if (INTCONbits.RBIF)
     {
         INTCONbits.RBIF = 0;
-        portb_flags = PORTB;
+        ban_B = PORTB;
     }
 
     if (INTCONbits.T0IF)
     {
         INTCONbits.T0IF = 0;
         TMR0 = tmr_preload;
-        push_timer++;
-        mux_timer++;
+        Timer++;
+        timer_mux++;
     }
 
     if (PIR1bits.ADIF)
     {
-        adc_data = ADRESH;
+        adc_datos = ADRESH;
     }
 }
 
-void mux_logic(void)
+void config_mux(void)
 {
-    if (mux_time != mux_timer)
+    if (mux_time != timer_mux)
     {
         return;
     }
 
-    mux_timer = 0;
+    timer_mux = 0;
 
 }
 
-void adc_logic(void)
+void config_adc(void)
 {
     if (ADCON0bits.GO)
     {
@@ -117,23 +119,23 @@ void adc_logic(void)
     }
 }
 
-void push_logic(void)
+void config_boton(void)
 {
-    if (push_debounce_time != push_timer)
+    if (push_debounce_time != Timer)
     {
         return;
     }
 
-    push_timer = 0;
+    Timer = 0;
 
-    if (0x01 == portb_flags)
+    if (0x01 == ban_B)
     {
-        push_counter++;
+        cont1++;
     }
 
-    if (0x02 == portb_flags)
+    if (0x02 == ban_B)
     {
-        push_counter--;
+        cont1--;
     }
 
     return;

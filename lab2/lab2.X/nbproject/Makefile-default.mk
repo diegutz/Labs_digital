@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=interupciones.c
+SOURCEFILES_QUOTED_IF_SPACED=interupciones.c 7_seg_config.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/interupciones.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/interupciones.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/interupciones.p1 ${OBJECTDIR}/7_seg_config.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/interupciones.p1.d ${OBJECTDIR}/7_seg_config.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/interupciones.p1
+OBJECTFILES=${OBJECTDIR}/interupciones.p1 ${OBJECTDIR}/7_seg_config.p1
 
 # Source Files
-SOURCEFILES=interupciones.c
+SOURCEFILES=interupciones.c 7_seg_config.c
 
 
 
@@ -102,6 +102,14 @@ ${OBJECTDIR}/interupciones.p1: interupciones.c  nbproject/Makefile-${CND_CONF}.m
 	@-${MV} ${OBJECTDIR}/interupciones.d ${OBJECTDIR}/interupciones.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/interupciones.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/7_seg_config.p1: 7_seg_config.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/7_seg_config.p1.d 
+	@${RM} ${OBJECTDIR}/7_seg_config.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/7_seg_config.p1 7_seg_config.c 
+	@-${MV} ${OBJECTDIR}/7_seg_config.d ${OBJECTDIR}/7_seg_config.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/7_seg_config.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/interupciones.p1: interupciones.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -110,6 +118,14 @@ ${OBJECTDIR}/interupciones.p1: interupciones.c  nbproject/Makefile-${CND_CONF}.m
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/interupciones.p1 interupciones.c 
 	@-${MV} ${OBJECTDIR}/interupciones.d ${OBJECTDIR}/interupciones.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/interupciones.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/7_seg_config.p1: 7_seg_config.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/7_seg_config.p1.d 
+	@${RM} ${OBJECTDIR}/7_seg_config.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/7_seg_config.p1 7_seg_config.c 
+	@-${MV} ${OBJECTDIR}/7_seg_config.d ${OBJECTDIR}/7_seg_config.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/7_seg_config.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
