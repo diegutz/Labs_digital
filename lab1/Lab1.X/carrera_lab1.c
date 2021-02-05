@@ -36,8 +36,11 @@
 //******************************************************************************
 int ban_1;          //banderas para el anti rebote de cada una de los botones
 int ban_2;
+int ban_3;
+int ban_4;
 int cont1;          //contador de pulsos de cada boton
 int cont2;
+int cont_alarm;
 
 //******************************************************************************
 //PROTOTIPOS DE FUNCIONES
