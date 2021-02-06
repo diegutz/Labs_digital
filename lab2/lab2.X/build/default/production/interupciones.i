@@ -7,8 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "interupciones.c" 2
-
-
+# 10 "interupciones.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -23,7 +22,13 @@
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 25 "interupciones.c"
+
+
+
+
+
+
+
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2504,279 +2509,153 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 25 "interupciones.c" 2
+# 30 "interupciones.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
 
 
 
 
-
-
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 26 "interupciones.c" 2
-# 43 "interupciones.c"
-uint8_t cont1 = 0;
-uint8_t ban_B = 0;
-uint8_t Timer = 0;
-uint8_t timer_mux = 0;
-uint8_t adc_datos = 0;
-
-
-
-
+void main(void);
+void ADC(void);
 void setup(void);
-void config_boton(void);
-void config_adc(void);
-void config_mux(void);
+void multiplexor(void);
+void aumentar(void);
+void restar(void);
 
 
 
+int cont0 = 0;
+char ciclo = 1;
+char todo = 1;
+int adc;
+float volt;
+const unsigned char display[16] = {
+    0x00111111,
+    0x00000110,
+    0x01011011,
+    0x01001111,
+    0x01100110,
+    0x01101101,
+    0x01111101,
+    0x00000111,
+    0x01111111,
+    0x01100111,
+    0x01110111,
+    0x01111100,
+    0x00111001,
+    0x01011110,
+    0x01011110,
+    0x01011110};
+int seg_1;
+int seg_2;
 
 
-void main(void)
-{
+
+void main(void) {
+
+
     setup();
-    while(1)
-    {
+    while(1){
+        _delay((unsigned long)((300)*(8000000/4000.0)));
+        if (IOCBbits.IOCB0 = 1 && PORTBbits.RB0 == 1) {
+            aumentar();
+        }
+        if (IOCBbits.IOCB3 = 1 && PORTBbits.RB3 == 1) {
+            restar();
+        }
+        if (cont0 > 255) {
+            cont0 = 0;
+        }
 
+        if (ADCON0bits.GO_DONE == 0) {
+            multiplexor();
+        }
 
-
-        config_boton();
-        config_adc();
-        config_mux();
-
-        PORTEbits.RE2 = adc_datos >= cont1 ? 1 : 0;
-
-        PORTD = cont1;
     }
 }
 
-void __attribute__((picinterrupt(("")))) isr(void)
-{
-    if (INTCONbits.RBIF)
-    {
-        INTCONbits.RBIF = 0;
-        ban_B = PORTB;
-    }
-
-    if (INTCONbits.T0IF)
-    {
-        INTCONbits.T0IF = 0;
-        TMR0 = 6;;
-        Timer++;
-        timer_mux++;
-    }
-
-    if (PIR1bits.ADIF)
-    {
-        adc_datos = ADRESH;
-    }
-}
-
-void config_mux(void)
-{
-    if (40 != timer_mux)
-    {
-        return;
-    }
-
-    timer_mux = 0;
-
-}
-
-void config_adc(void)
-{
-    if (ADCON0bits.GO)
-    {
-        return;
-    }
-}
-
-void config_boton(void)
-{
-    if (200 != Timer)
-    {
-        return;
-    }
-
-    Timer = 0;
-
-    if (0x01 == ban_B)
-    {
-        cont1++;
-    }
-
-    if (0x02 == ban_B)
-    {
-        cont1--;
-    }
-
-    return;
-}
 
 
 
+void setup(void){
 
-void setup(void)
-{
-    ANSEL = 0x01;
-    ANSELH = 0x00;
 
-    TRISA = 0x01;
-    TRISB = 0x03;
-    TRISC = 0x00;
-    TRISD = 0x00;
-    TRISE = 0x00;
+    OSCCONbits.IRCF = 0b111;
+    OSCCONbits.SCS = 0b00;
+
+
+    TRISA = 0b00000000;
+    TRISB = 0b01111111;
+    TRISC = 0b00000000;
+    TRISD = 0b00000000;
+    TRISE = 1;
 
     PORTA = 0;
     PORTB = 0;
     PORTC = 0;
     PORTD = 0;
-    PORTE = 0;
+    PORTE = 0b00010;
+    ANSELH = 0;
+
+    ANSELbits.ANS6 = 0;
+    ADCON0bits.ADCS0 = 1;
+    ADCON0bits.ADCS1 = 0;
+    ADCON0bits.CHS0 = 0;
+    ADCON0bits.CHS1 = 1;
+    ADCON0bits.CHS2 = 1;
+    ADCON0bits.CHS3 = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON1bits.ADFM = 0;
+    ADCON0bits.GO_DONE = 1;
+    ADCON0bits.ADON = 1;
 
 
-    IOCB = 0x03;
-    INTCONbits.RBIE = 1;
-    INTCONbits.T0IE = 1;
     INTCONbits.GIE = 1;
+    PIE1bits.ADIE = 0;
+    PIE1bits.ADIE = 1;
+    INTCONbits.GIE = 1;
+    INTCONbits.RBIF = 0;
+    INTCONbits.RBIF = 1;
+    IOCB = 1;
+    IOCBbits.IOCB0 = 1;
+    IOCBbits.IOCB3 = 1;
 
-    OSCCON = 0b01100001;
+}
 
-    OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.PS2 = 0;
-    OPTION_REGbits.PS1 = 0;
-    OPTION_REGbits.PS0 = 1;
 
-    TMR0 = 6;;
 
-    INTCONbits.T0IF = 0;
 
-    return;
+
+void multiplexor(void){
+
+            seg_1 = ADRESH;
+            seg_2 = ADRESH;
+            seg_1 = ((seg_1/16)%16);
+            seg_2 = (seg_2%16);
+            PORTD = display[seg_1];
+            PORTCbits.RC0 = 1;
+            PORTCbits.RC0 = 0;
+            PORTD = display[seg_2];
+            PORTCbits.RC1 = 1;
+            PORTCbits.RC1 = 0;
+            ADCON0bits.GO_DONE =1;
+
+}
+void aumentar(void){
+    PORTBbits.RB7 = 1;
+            cont0++;
+            _delay((unsigned long)((500)*(8000000/4000.0)));
+            IOCBbits.IOCB0 = 0;
+            do { } while (PORTBbits.RB0 == 1);
+            PORTA = cont0;
+}
+void restar(void){
+            cont0--;
+            _delay((unsigned long)((500)*(8000000/4000.0)));
+            do {
+
+            } while (PORTBbits.RB3 == 1);
+            PORTA = cont0;
+            IOCBbits.IOCB3 = 0;
 }
